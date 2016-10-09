@@ -1,4 +1,0 @@
-C:\Users\josh_\Documents\GitHub\IOTBus\Common\bin\Debug\Common.dll
-C:\Users\josh_\Documents\GitHub\IOTBus\Common\bin\Debug\Common.pdb
-C:\Users\josh_\Documents\GitHub\IOTBus\Common\obj\Debug\Common.dll
-C:\Users\josh_\Documents\GitHub\IOTBus\Common\obj\Debug\Common.pdb
