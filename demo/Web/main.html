@@ -1,0 +1,105 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>ATL Autonomous Autobuses</title>
+    <style>
+        html, body, #map-canvas {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #content {
+            width: 100%;
+            height: 100%;
+        }
+
+        /*#left {
+            width: 300px;
+            height: 100%;
+            float: left;
+            background-color: gray;
+        }
+
+        #right {
+            margin-left: 300px;
+            height: 100%;
+        }
+
+        #details {
+            margin: 30px;
+        }*/
+    </style>
+    <script type="text/javascript">
+
+        var map;
+        var conn;
+        var hub;
+        var busMarkers = {};
+
+        function addClickHandler(marker, busid) {
+            marker.addListener('click',
+                function () {
+                    $.getJSON("api/map/" + busid, function(bus) {
+                        var infowindow = new google.maps.InfoWindow({
+                            content: "TripId: " + bus.tripid + " VehicleId: " + bus.vehicleid + " Route: " + bus.route + " Timeliness: " + bus.timeliness
+                        });
+                        infowindow.open(map, marker);
+                    });
+                });
+        }
+
+        function updateBus(bus) {
+
+            if (busMarkers.hasOwnProperty(bus.id)) {
+                busMarkers[bus.id].setMap(null);
+            }
+
+            var marker = new google.maps.Marker({
+                position: { lat: bus.lat, lng: bus.lng },
+                map: map,
+                title: bus.timepoint,
+                draggable: false
+            });
+
+            addClickHandler(marker, bus.id);
+
+            busMarkers[bus.id] = marker;
+        }
+
+        function initialize() {
+
+            var mapOptions = {
+                zoom: 11,
+                center: { lat: 33.7550, lng: -84.3900 },
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            conn = $.hubConnection();
+
+            hub = conn.createHubProxy('MapHub');
+
+            hub.on('updateBus', updateBus);
+
+            conn.start().done(function () {
+                hub.invoke('registerMapView');
+            });
+        }
+
+    </script>
+    <script src="Scripts/jquery-3.1.0.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.1.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6RU_c24gkr2wpmwO6Ph8UGr61N_J6JCs&callback=initialize" async defer></script>
+</head>
+<body>
+<div id="content">
+    <div id="map-canvas"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{D74A7236-540C-4CA4-9CDD-F04CF567213A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulator", "Simulator\Simulator.csproj", "{BB0B6B37-C804-4105-B5AB-71BFF85952EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{B9856556-5440-49AB-B11C-06B354FE5735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listener", "Listener\Listener.csproj", "{DFC61CFA-D5A7-40C2-B623-26F22964FB8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D74A7236-540C-4CA4-9CDD-F04CF567213A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74A7236-540C-4CA4-9CDD-F04CF567213A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74A7236-540C-4CA4-9CDD-F04CF567213A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74A7236-540C-4CA4-9CDD-F04CF567213A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB0B6B37-C804-4105-B5AB-71BFF85952EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB0B6B37-C804-4105-B5AB-71BFF85952EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB0B6B37-C804-4105-B5AB-71BFF85952EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB0B6B37-C804-4105-B5AB-71BFF85952EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9856556-5440-49AB-B11C-06B354FE5735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9856556-5440-49AB-B11C-06B354FE5735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9856556-5440-49AB-B11C-06B354FE5735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9856556-5440-49AB-B11C-06B354FE5735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFC61CFA-D5A7-40C2-B623-26F22964FB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC61CFA-D5A7-40C2-B623-26F22964FB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC61CFA-D5A7-40C2-B623-26F22964FB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC61CFA-D5A7-40C2-B623-26F22964FB8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8
+	EndGlobalSection
+EndGlobal
