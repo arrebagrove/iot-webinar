@@ -131,7 +131,7 @@ To run the demo code, do the following:
 
        ![Storage account key and name](images/storage-account-key-and-name.png)
 
-    - in [Web/main.html](web/main.html) on line 94 add your Google Maps API key
+    - in [Web/main.html](web/main.html) on line 98 add your Google Maps API key
 
 1. At this point you should be able to debug the Visual Studio solution using the standard F5 debug experience. The Simulator project will generate device messages and submit them to the IoT Hub, where they're picked up by the two Stream Analytics jobs and the custom Listener code. The main.html page in the Web project shows the buses on the Google map and updates their status as they move, using SignalR browser push messages.
  
